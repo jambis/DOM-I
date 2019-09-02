@@ -48,8 +48,9 @@ function start() {
   msTens.textContent = "0";
   buttonStart.disabled = true;
   removeRedDigit();
+
   if (!timerObj) {
-    timerObj = window.setInterval(manageTimer, 10);
+    timerObj = setInterval(manageTimer, 10);
   }
 }
 
@@ -64,10 +65,10 @@ function reset() {
   removeRedDigit();
 
   if (timerObj) {
-    clearInterval(timerObj);
-    timerObj = null;
+    clearTimer();
   }
 }
+
 function clearTimer() {
   clearInterval(timerObj);
   timerObj = null;
